@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Authors>Gonçalo Lopes</Authors>
+    <Title>Bonsai - PulsePal Library</Title>
+    <Description>Bonsai Library containing modules for interfacing with the PulsePal pulse train generator.</Description>
+    <Copyright>Copyright © Gonçalo Lopes 2021</Copyright>
+    <ProjectUrl>https://github.com/bonsai-rx/pulsepal</ProjectUrl>
+    <PackageLicenseUrl>https://bonsai-rx.org/license</PackageLicenseUrl>
+    <PackageIconUrl>https://bonsai-rx.org/assets/images/bonsai.png</PackageIconUrl>
+    <PackageTags>Bonsai Rx PulsePal Pulse Stimulator</PackageTags>
+    <IncludeSymbols Condition="'$(Configuration)'=='Release'">true</IncludeSymbols>
+    <GeneratePackageOnBuild Condition="'$(Configuration)'=='Release'">true</GeneratePackageOnBuild>
+    <PackageOutputPath>..\bin\$(Configuration)</PackageOutputPath>
+    <TargetFramework>net462</TargetFramework>
+    <Features>strict</Features>
+    <Version>0.2.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Bonsai.System" Version="2.6.0" />
+    <PackageReference Include="OpenCV.Net" Version="3.3.1" />
+  </ItemGroup>
+
+</Project>

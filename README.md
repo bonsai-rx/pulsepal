@@ -1,2 +1,3 @@
-# pulsepal
-Bonsai Library for interfacing with PulsePal devices
+# Bonsai - PulsePal Library
+
+Bonsai Library containing modules for interfacing with the PulsePal pulse train generator.

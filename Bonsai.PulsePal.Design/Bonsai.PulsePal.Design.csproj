@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <Authors>Gonçalo Lopes</Authors>
+    <Title>Bonsai - PulsePal Design Library</Title>
+    <Description>Bonsai Design Library containing editor classes for PulsePal configuration.</Description>
+    <Copyright>Copyright © Gonçalo Lopes 2021</Copyright>
+    <ProjectUrl>https://github.com/bonsai-rx/pulsepal</ProjectUrl>
+    <PackageLicenseUrl>https://bonsai-rx.org/license</PackageLicenseUrl>
+    <PackageIconUrl>https://bonsai-rx.org/assets/images/bonsai.png</PackageIconUrl>
+    <PackageTags>Bonsai Rx PulsePal Design Pulse Stimulator</PackageTags>
+    <IncludeSymbols Condition="'$(Configuration)'=='Release'">true</IncludeSymbols>
+    <GeneratePackageOnBuild Condition="'$(Configuration)'=='Release'">true</GeneratePackageOnBuild>
+    <PackageOutputPath>..\bin\$(Configuration)</PackageOutputPath>
+    <UseWindowsForms>true</UseWindowsForms>
+    <TargetFramework>net462</TargetFramework>
+    <Features>strict</Features>
+    <Version>0.2.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Bonsai.System.Design" Version="2.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Bonsai.PulsePal\Bonsai.PulsePal.csproj" />
+  </ItemGroup>
+
+</Project>
