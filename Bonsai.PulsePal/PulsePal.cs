@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO.Ports;
 using System.IO;
+using System.Threading.Tasks;
+using System.Threading;
 
 namespace Bonsai.PulsePal
 {
@@ -44,7 +46,6 @@ namespace Bonsai.PulsePal
             responseBuffer = new byte[4];
             commandBuffer = new byte[MaxDataBytes];
             readBuffer = new byte[serialPort.ReadBufferSize];
-            serialPort.DataReceived += new SerialDataReceivedEventHandler(serialPort_DataReceived);
         }
 
         public int MajorVersion { get; private set; }
@@ -56,25 +57,76 @@ namespace Bonsai.PulsePal
             get { return serialPort.IsOpen; }
         }
 
-        void serialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
-        {
-            var bytesToRead = serialPort.BytesToRead;
-            if (serialPort.IsOpen && bytesToRead > 0)
-            {
-                bytesToRead = serialPort.Read(readBuffer, 0, bytesToRead);
-                for (int i = 0; i < bytesToRead; i++)
-                {
-                    ProcessInput(readBuffer[i]);
-                }
-            }
-        }
-
-        public void Open()
+        Task RunAsync(CancellationToken cancellationToken)
         {
             serialPort.Open();
             serialPort.ReadExisting();
+            Connect();
+
+            return Task.Factory.StartNew(() =>
+            {
+                using var cancellation = cancellationToken.Register(serialPort.Dispose);
+                while (!cancellationToken.IsCancellationRequested)
+                {
+                    try
+                    {
+                        var bytesToRead = serialPort.BytesToRead;
+                        if (bytesToRead == 0)
+                        {
+                            var nextByte = serialPort.ReadByte();
+                            if (nextByte < 0) break;
+                            ProcessInput((byte)nextByte);
+                        }
+                        else
+                        {
+                            while (bytesToRead > 0)
+                            {
+                                var bytesRead = serialPort.Read(readBuffer, 0, Math.Min(bytesToRead, readBuffer.Length));
+                                for (int i = 0; i < bytesRead; i++)
+                                {
+                                    ProcessInput(readBuffer[i]);
+                                }
+                                bytesToRead -= bytesRead;
+                            }
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        if (!cancellationToken.IsCancellationRequested)
+                        {
+                            throw;
+                        }
+                        break;
+                    }
+                }
+            },
+            cancellationToken,
+            TaskCreationOptions.LongRunning,
+            TaskScheduler.Default);
+        }
+
+        /// <summary>
+        /// Opens a new serial port connection to the Arduino board.
+        /// </summary>
+        /// <param name="cancellationToken">
+        /// A <see cref="CancellationToken"/> which can be used to cancel the operation.
+        /// </param>
+        public void Open(CancellationToken cancellationToken = default)
+        {
+            RunAsync(cancellationToken);
+        }
+
+        void Connect()
+        {
             commandBuffer[0] = OpMenu;
             commandBuffer[1] = HandshakeCommand;
+            serialPort.Write(commandBuffer, 0, 2);
+        }
+
+        void Disconnect()
+        {
+            commandBuffer[0] = OpMenu;
+            commandBuffer[1] = DisconnectCommand;
             serialPort.Write(commandBuffer, 0, 2);
         }
 
@@ -270,9 +322,7 @@ namespace Bonsai.PulsePal
             {
                 if (disposing)
                 {
-                    commandBuffer[0] = OpMenu;
-                    commandBuffer[1] = DisconnectCommand;
-                    serialPort.Write(commandBuffer, 0, 2);
+                    Disconnect();
                     serialPort.Close();
                     disposed = true;
                 }

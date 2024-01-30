@@ -5,6 +5,7 @@
     <Description>Bonsai Library containing modules for interfacing with the PulsePal pulse train generator.</Description>
     <PackageTags>Bonsai Rx PulsePal Pulse Stimulator</PackageTags>
     <TargetFramework>net462</TargetFramework>
+    <LangVersion>9.0</LangVersion>
     <Version>0.2.0</Version>
   </PropertyGroup>
 
