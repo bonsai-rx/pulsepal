@@ -106,7 +106,7 @@ namespace Bonsai.PulsePal
         }
 
         /// <summary>
-        /// Opens a new serial port connection to the Arduino board.
+        /// Opens a new serial port connection to the Pulse Pal device.
         /// </summary>
         /// <param name="cancellationToken">
         /// A <see cref="CancellationToken"/> which can be used to cancel the operation.
