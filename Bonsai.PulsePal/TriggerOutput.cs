@@ -9,7 +9,7 @@ namespace Bonsai.PulsePal
     public class TriggerOutput : Sink
     {
         [Description("The name of the serial port.")]
-        [Editor("Bonsai.PulsePal.Design.PulsePalConfigurationEditor, Bonsai.PulsePal.Design", typeof(UITypeEditor))]
+        [TypeConverter(typeof(PortNameConverter))]
         public string PortName { get; set; }
 
         [Description("A value representing the bitmask of channels to trigger.")]

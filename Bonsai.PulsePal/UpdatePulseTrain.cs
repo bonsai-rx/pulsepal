@@ -15,7 +15,7 @@ namespace Bonsai.PulsePal
         }
 
         [Description("The name of the serial port.")]
-        [Editor("Bonsai.PulsePal.Design.PulsePalConfigurationEditor, Bonsai.PulsePal.Design", typeof(UITypeEditor))]
+        [TypeConverter(typeof(PortNameConverter))]
         public string PortName { get; set; }
 
         [Description("The identifier of the custom pulse train.")]
