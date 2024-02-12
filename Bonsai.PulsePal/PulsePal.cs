@@ -319,7 +319,7 @@ namespace Bonsai.PulsePal
         /// Sets a delay between the arrival of a trigger and when the channel
         /// begins its pulse train.
         /// </summary>
-        /// <param name="channel">The output channel to configure.</50param>
+        /// <param name="channel">The output channel to configure.</param>
         /// <param name="seconds">
         /// The delay to start the pulse train, in the range [0.0001, 3600] seconds.
         /// </param>
@@ -749,7 +749,7 @@ namespace Bonsai.PulsePal
 
             readonly int GetVoltageSteps(decimal volts)
             {
-                return (int)(decimal.Ceiling(((volts + 10) / 20) * device.dacMaxValue));
+                return (int)decimal.Ceiling((volts + 10) / 20 * device.dacMaxValue);
             }
 
             readonly uint GetTimeCycles(decimal seconds)
