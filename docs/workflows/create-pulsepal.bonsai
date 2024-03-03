@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WorkflowBuilder Version="2.8.1"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xmlns:pal="clr-namespace:Bonsai.PulsePal;assembly=Bonsai.PulsePal"
+                 xmlns="https://bonsai-rx.org/2018/workflow">
+  <Workflow>
+    <Nodes>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="pal:CreatePulsePal">
+          <pal:Name />
+          <pal:PortName>COM1</pal:PortName>
+          <pal:OutputChannels>
+            <pal:ConfigureOutputChannel>
+              <pal:PortName>pulsepal</pal:PortName>
+              <pal:Channel>1</pal:Channel>
+              <pal:Biphasic>false</pal:Biphasic>
+              <pal:Phase1Voltage>0</pal:Phase1Voltage>
+              <pal:Phase2Voltage>0</pal:Phase2Voltage>
+              <pal:RestingVoltage>0</pal:RestingVoltage>
+              <pal:Phase1Duration>0.0001</pal:Phase1Duration>
+              <pal:InterPhaseInterval>0</pal:InterPhaseInterval>
+              <pal:Phase2Duration>0.0001</pal:Phase2Duration>
+              <pal:InterPulseInterval>0.0001</pal:InterPulseInterval>
+              <pal:BurstDuration>0</pal:BurstDuration>
+              <pal:InterBurstInterval>0.0001</pal:InterBurstInterval>
+              <pal:PulseTrainDuration>0.0001</pal:PulseTrainDuration>
+              <pal:PulseTrainDelay>0.0001</pal:PulseTrainDelay>
+              <pal:CustomTrainIdentity>None</pal:CustomTrainIdentity>
+              <pal:CustomTrainTarget>PulseOnset</pal:CustomTrainTarget>
+              <pal:CustomTrainLoop>false</pal:CustomTrainLoop>
+              <pal:TriggerOnChannel1>false</pal:TriggerOnChannel1>
+              <pal:TriggerOnChannel2>false</pal:TriggerOnChannel2>
+              <pal:ContinuousLoop>false</pal:ContinuousLoop>
+            </pal:ConfigureOutputChannel>
+          </pal:OutputChannels>
+          <pal:TriggerChannels>
+            <pal:ConfigureTriggerChannel>
+              <pal:PortName>COM1</pal:PortName>
+              <pal:Channel>1</pal:Channel>
+              <pal:TriggerMode>Normal</pal:TriggerMode>
+            </pal:ConfigureTriggerChannel>
+          </pal:TriggerChannels>
+        </Combinator>
+      </Expression>
+    </Nodes>
+    <Edges />
+  </Workflow>
+</WorkflowBuilder>
