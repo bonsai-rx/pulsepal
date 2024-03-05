@@ -19,11 +19,11 @@ The ['ConfigureTriggerChannel'](xref:Bonsai.PulsePal.ConfigureTriggerChannel) al
 
 In normal mode, an incoming trigger (low to high logic transition) received by a trigger channel will start pulse trains on all linked output channels. 
 
--Additional trigger pulses received during playback of the pulse train will be ignored.
+- Additional trigger pulses received during playback of the pulse train will be ignored.
 
 In toggle mode, an incoming trigger received by a trigger channel will start pulse trains on linked output channels.
 
--If an additional trigger pulse is detected during playback, the pulse trains on all linked output channels are stopped.
+- If an additional trigger pulse is detected during playback, the pulse trains on all linked output channels are stopped.
 
 In pulse gated mode, a low to high logic transition starts playback and a high to low transition stops playback.
 
