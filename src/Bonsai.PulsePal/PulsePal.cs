@@ -16,9 +16,9 @@ namespace Bonsai.PulsePal
         internal const double MinTimePeriod = 0.0001;
         internal const double MaxTimePeriod = 3600;
 
-        const int BaudRate = 115200;
+        const int BaudRate = 12000000;
         const int CycleFrequency = 20000;
-        const int MaxCyclePeriod = 36000000;
+        const int MaxCyclePeriod = 3600 * CycleFrequency;
         const int MaxPulseLength = 1000;
         const int MaxDataBytes = 8192;
 

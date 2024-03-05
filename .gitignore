@@ -3,6 +3,7 @@ bin
 obj
 *.user
 *.exe
+*.exe.old
 *.exe.settings
 
 # bonsai environment
