@@ -12,6 +12,9 @@ Configuration of the hardware trigger channels can be set either during the init
 
 - In Pulse gated mode: a low to high logic transition starts playback and a high to low transition stops playback.
 
+> [!NOTE]
+> Remember to link the output channel to the trigger channel by setting the `TriggerOnChannelX` property in either the ['Create Pulsepal'](xref:Bonsai.PulsePal.CreatePulsePal) or ['Configure Output Channel'](xref:Bonsai.PulsePal.ConfigureOutputChannel) operators.
+
 ## Software Trigger
 Playback of output channels can be triggered by the ['Trigger Output Channels'](xref:Bonsai.PulsePal.TriggerOutputChannels) operator. In the example below, triggering of the output channels is linked to a keypress, but they could also be easily linked to other Bonsai events.
 
