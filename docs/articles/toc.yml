@@ -1,2 +1,8 @@
 - name: Getting Started
   href: intro.md
+- name: Creating and Configuring PulsePal Connection
+  href: creating-configuring.md
+- name: Creating Pulse Trains
+  href: creating-pulse-trains
+- name: Triggering Output 
+  href: trigger-ouput
