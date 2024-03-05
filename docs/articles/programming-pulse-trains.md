@@ -1,5 +1,5 @@
 
-## Pulse Trains
+# Pulse Trains
 
 The `Bonsai.PulsePal` package provides two ways to create pulse trains.
 

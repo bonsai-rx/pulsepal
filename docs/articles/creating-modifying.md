@@ -1,7 +1,7 @@
 
 ## Creating Pulsepal Connection 
 
-The ['Create Pulsepal'](xref:Bonsai.PulsePal.CreatePulsePal) operator is the first node you will add to your workflow when using the Pulsepal. This source is responsible for establishing a serial connection link with the device and exposes a initial set of properties that can be used to configure the Pulsepal. Additional discussion of those properties can be found in the other articles.
+The ['Create PulsePal'](xref:Bonsai.PulsePal.CreatePulsePal) operator is the first node you will add to your workflow when using the Pulsepal. This source is responsible for establishing a serial connection link with the device and exposes a initial set of properties that can be used to configure the Pulsepal. Additional discussion of those properties can be found in the other articles.
 
 :::workflow
 ![CreatePulsePal](../workflows/create-pulsepal.bonsai)

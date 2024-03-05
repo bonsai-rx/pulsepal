@@ -1,5 +1,5 @@
 
-## Triggering playback
+# Triggering playback
 
 Triggering of the PulsePal output channels can be done either through the hardware trigger channels or through software. The `Bonsai.PulsePal` package provides operators to configure and access both methods.
 
