@@ -1,6 +1,6 @@
 - name: Getting Started
   href: intro.md
-- name: Creating and Modifying PulsePal Connection
+- name: Creating and Modifying Pulse Pal Connection
   href: creating-modifying.md
 - name: Programming Pulse Trains
   href: programming-pulse-trains.md
@@ -8,3 +8,5 @@
   href: custom-pulse-trains.md
 - name: Triggering Playback
   href: trigger-output.md
+- name: Updating Pulse Pal Display
+  href: writing-display.md
