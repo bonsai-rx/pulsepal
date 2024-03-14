@@ -1,5 +1,5 @@
 - name: Getting Started
-  href: intro.md
+  href: ../index.md
 - name: Creating and Modifying Pulse Pal Connection
   href: creating-modifying.md
 - name: Programming Pulse Trains

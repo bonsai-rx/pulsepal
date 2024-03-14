@@ -8,27 +8,27 @@ The `Bonsai.PulsePal` package provides a set of operators for creating more comp
 Custom pulse trains are uploaded to the Pulse Pal, which has 2 memory slots for 2 custom pulse trains of up to 1000 pulses each. Custom pulse trains are defined by an array of doubles specifying the pulse onset times (with respect to trigger onset) and voltages. Pulse duration is set separately by the `Phase1Duration` on the output channel that the custom pulse train is being played (and is thus identical for all the pulses).
 
 ## Constructing custom pulse trains
-Custom pulse trains can be constructed using the ['CustomPulseTrain'](xref:Bonsai.PulsePal.CustomPulseTrain) operator and sent to the device using the ['SendCustomPulseTrain'](xref:Bonsai.PulsePal.SendCustomPulseTrain) operator. When sending the custom pulse train to the Pulse Pal, the `CustomTrainIdentifier` needs to be set to either of the two custom train IDs that the Pulse Pal can store. Although the `Phase1Duration` property only needs to be set during playback, it can be set at the same time using the ['ConfigureChannelParameter'](xref:Bonsai.PulsePal.ConfigureChannelParameter) operator with the `Phase1Duration` property. The workflow below encapsulates all of these steps. 
+Custom pulse trains can be constructed using the [`CustomPulseTrain`](xref:Bonsai.PulsePal.CustomPulseTrain) operator and sent to the device using the [`SendCustomPulseTrain`](xref:Bonsai.PulsePal.SendCustomPulseTrain) operator. When sending the custom pulse train to the Pulse Pal, the `CustomTrainIdentifier` needs to be set to either of the two custom train IDs that the Pulse Pal can store. Although the `Phase1Duration` property only needs to be set during playback, it can be set at the same time using the [`ConfigureChannelParameter`](xref:Bonsai.PulsePal.ConfigureChannelParameter) operator with the `Phase1Duration` property. The workflow below encapsulates all of these steps. 
 
 :::workflow
 ![Create Custom Pulse Trains](../workflows/create-custom-pulsetrain.bonsai)
 :::
 
-In the ['CustomPulseTrain'](xref:Bonsai.PulsePal.CustomPulseTrain) operator, the array of doubles specifying the pulse onset times and voltages can be set using the `PulseOnsetCollection` editor. The screenshot below reproduces the example custom pulse train in the image at the beginning of this section.
+In the [`CustomPulseTrain`](xref:Bonsai.PulsePal.CustomPulseTrain) operator, the array of doubles specifying the pulse onset times and voltages can be set using the `PulseOnsetCollection` editor. The screenshot below reproduces the example custom pulse train in the image at the beginning of this section.
 
 !['Bonsai - PulseOnsetCollection'](~/images/pulse-onset-collection.png)
 
 > [!NOTE]
 > Pulse onset times and voltages are absolute values (they do not stack).
 
-An alternate way of constructing the custom pulse train is to create a series of individual pulses using the ['PulseOnset'](xref:Bonsai.PulsePal.PulseOnset) operator, concatenate it and pass it as an array to the ['SendCustomPulseTrain'](xref:Bonsai.PulsePal.SendCustomPulseTrain) operator as follows.
+An alternate way of constructing the custom pulse train is to create a series of individual pulses using the [`PulseOnset`](xref:Bonsai.PulsePal.PulseOnset) operator, concatenate it and pass it as an array to the [`SendCustomPulseTrain`](xref:Bonsai.PulsePal.SendCustomPulseTrain) operator as follows.
 
 :::workflow
 ![Concat pulse onset](../workflows/concat-pulse-onset.bonsai)
 :::
 
 ## Custom waveform generation
-Custom pulse trains can also be constructed from a function generator and sent to the Pulse Pal using the ['SendCustomWaveform'](xref:Bonsai.PulsePal.SendCustomWaveform) operator. When sending the custom waveform to the Pulse Pal, the `CustomTrainIdentifier` needs to be set to either of the two custom train IDs that the Pulse Pal can store. As the custom pulse train is limited to 1000 pulses, only the first buffer of the function generator output should be captured and sent.
+Custom pulse trains can also be constructed from a function generator and sent to the Pulse Pal using the [`SendCustomWaveform`](xref:Bonsai.PulsePal.SendCustomWaveform) operator. When sending the custom waveform to the Pulse Pal, the `CustomTrainIdentifier` needs to be set to either of the two custom train IDs that the Pulse Pal can store. As the custom pulse train is limited to 1000 pulses, only the first buffer of the function generator output should be captured and sent.
 
 :::workflow
 ![Send Custom Waveform](../workflows/send-custom-waveform.bonsai)
@@ -36,13 +36,13 @@ Custom pulse trains can also be constructed from a function generator and sent t
 
 
 > [!CAUTION]
-> The ['SendCustomWaveform'](xref:Bonsai.PulsePal.SendCustomWaveform) operator does not "exactly" reproduce the input waveform as only pulse onset and voltages are sent. 
-> Similar to the ['SendCustomPulseTrain'](xref:Bonsai.PulsePal.SendCustomPulseTrain) operator pulse duration is set by the `Phase1Duration` on the output channel during playback.
-> This can be addressed by setting the `Phase1Duration` to the value that matches the sampling rate of the ['SendCustomWaveform'](xref:Bonsai.PulsePal.SendCustomWaveform) operator.
+> The [`SendCustomWaveform`](xref:Bonsai.PulsePal.SendCustomWaveform) operator does not "exactly" reproduce the input waveform as only pulse onset and voltages are sent. 
+> Similar to the [`SendCustomPulseTrain`](xref:Bonsai.PulsePal.SendCustomPulseTrain) operator pulse duration is set by the `Phase1Duration` on the output channel during playback.
+> This can be addressed by setting the `Phase1Duration` to the value that matches the sampling rate of the [`SendCustomWaveform`](xref:Bonsai.PulsePal.SendCustomWaveform) operator.
 > However it is still advised that custom pulse trains generated by this operator be verified with an oscilloscope.
 
 ## Custom train playback settings
-Besides setting the output channel to playback the pulse train from with the `Channel` property in either the the ['CreatePulsepal'](xref:Bonsai.PulsePal.CreatePulsePal) or ['ConfigureOutputChannel'](xref:Bonsai.PulsePal.ConfigureOutputChannel) operators, there are a few unique settings for custom train playback.
+Besides setting the output channel to playback the pulse train from with the `Channel` property in either the the [`CreatePulsepal`](xref:Bonsai.PulsePal.CreatePulsePal) or [`ConfigureOutputChannel`](xref:Bonsai.PulsePal.ConfigureOutputChannel) operators, there are a few unique settings for custom train playback.
 
 !['Custom Train Playback Settings'](~/images/custom-train-playbacksettings-outlined.png)
 

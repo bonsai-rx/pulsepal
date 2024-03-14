@@ -1,6 +1,6 @@
 # Programming Pulse Trains
 
-Pulse trains can be programmed by configuring the output channel properties in either the ['CreatePulsepal'](xref:Bonsai.PulsePal.CreatePulsePal) or ['ConfigureOutputChannel'](xref:Bonsai.PulsePal.ConfigureOutputChannel) operators. Using the Pulse Pal terminology, pulse trains are built hierarchically from sequences of pulses and bursts. The following sections will detail how to configure the parameters for each in Bonsai. Additional information on these parameters can be found on the [Pulse Pal Parameter Guide](https://sites.google.com/site/pulsepalwiki/parameter-guide/).
+Pulse trains can be programmed by configuring the output channel properties in either the [`CreatePulsepal`](xref:Bonsai.PulsePal.CreatePulsePal) or [`ConfigureOutputChannel`](xref:Bonsai.PulsePal.ConfigureOutputChannel) operators. Using the Pulse Pal terminology, pulse trains are built hierarchically from sequences of pulses and bursts. The following sections will detail how to configure the parameters for each in Bonsai. Additional information on these parameters can be found on the [Pulse Pal Parameter Guide](https://sites.google.com/site/pulsepalwiki/parameter-guide/).
 
 ## Pulse parameters
 Pulses can either be monophasic pulses or biphasic. The time course of a pulse is governed by several parameters as shown in the image below. 
@@ -43,5 +43,5 @@ To reproduce the pulse train above, change the train properties as outlined in t
 !['Bonsai - Train'](~/images/train-outlined.png)
 
 ## Pulse train playback settings
-Besides setting the output channel to playback the pulse train from with the `Channel` property in either the the ['CreatePulsepal'](xref:Bonsai.PulsePal.CreatePulsePal) or ['ConfigureOutputChannel'](xref:Bonsai.PulsePal.ConfigureOutputChannel) operators, the `ContinuousLoop` property can be used to control if the pulse train on the output channel is played back continuously when triggered or only played once.
+Besides setting the output channel to playback the pulse train from with the `Channel` property in either the the [`CreatePulsepal`](xref:Bonsai.PulsePal.CreatePulsePal) or [`ConfigureOutputChannel`](xref:Bonsai.PulsePal.ConfigureOutputChannel) operators, the `ContinuousLoop` property can be used to control if the pulse train on the output channel is played back continuously when triggered or only played once.
 
