@@ -8,13 +8,13 @@ namespace Bonsai.PulsePal
     {
         IDisposable resource;
 
-        public PulsePalDisposable(PulsePal pulsePal, IDisposable disposable)
+        public PulsePalDisposable(PulsePalDevice pulsePal, IDisposable disposable)
         {
             PulsePal = pulsePal ?? throw new ArgumentNullException(nameof(pulsePal));
             resource = disposable ?? throw new ArgumentNullException(nameof(disposable));
         }
 
-        public PulsePal PulsePal { get; private set; }
+        public PulsePalDevice PulsePal { get; private set; }
 
         public bool IsDisposed => resource == null;
 

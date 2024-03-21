@@ -21,7 +21,7 @@ namespace Bonsai.PulsePal
         public double InterBurstInterval { get; set; } = MinTimePeriod;
 
         /// <inheritdoc/>
-        public override void Configure(PulsePal device)
+        public override void Configure(PulsePalDevice device)
         {
             device.SetInterBurstInterval(Channel, InterBurstInterval);
         }

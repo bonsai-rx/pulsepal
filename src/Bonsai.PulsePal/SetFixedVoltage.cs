@@ -10,18 +10,17 @@ namespace Bonsai.PulsePal
     [Description("Sets a constant voltage on an output channel.")]
     public class SetFixedVoltage : Sink
     {
-        const double MinVoltage = PulsePal.MinVoltage;
-        const double MaxVoltage = PulsePal.MaxVoltage;
+        const double MinVoltage = PulsePalDevice.MinVoltage;
+        const double MaxVoltage = PulsePalDevice.MaxVoltage;
         const int VoltageDecimalPlaces = OutputChannelParameterConfiguration.VoltageDecimalPlaces;
         const double VoltageIncrement = OutputChannelParameterConfiguration.VoltageIncrement;
 
         /// <summary>
-        /// Gets or sets the name of the serial port used to communicate with the
-        /// Pulse Pal device.
+        /// Gets or sets the name of the Pulse Pal device.
         /// </summary>
-        [TypeConverter(typeof(PortNameConverter))]
-        [Description("The name of the serial port used to communicate with the Pulse Pal device.")]
-        public string PortName { get; set; }
+        [TypeConverter(typeof(DeviceNameConverter))]
+        [Description("The name of the Pulse Pal device.")]
+        public string DeviceName { get; set; } = nameof(PulsePal);
 
         /// <summary>
         /// Gets or sets a value specifying the output channel to set to a fixed voltage.
@@ -58,7 +57,7 @@ namespace Bonsai.PulsePal
         public override IObservable<TSource> Process<TSource>(IObservable<TSource> source)
         {
             return Observable.Using(
-                () => PulsePalManager.ReserveConnection(PortName),
+                () => PulsePalManager.ReserveConnection(DeviceName),
                 connection => source.Do(input =>
                 {
                     lock (connection.PulsePal)

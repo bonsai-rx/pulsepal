@@ -10,7 +10,7 @@
 
         public ConfigureTriggerChannelCollection TriggerChannels { get; } = new();
 
-        public void Configure(PulsePal pulsePal)
+        public void Configure(PulsePalDevice pulsePal)
         {
             foreach (var outputChannel in OutputChannels)
             {

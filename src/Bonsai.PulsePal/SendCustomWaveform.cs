@@ -13,17 +13,16 @@ namespace Bonsai.PulsePal
     [Description("Uploads each array of voltages in a sequence to the Pulse Pal device, with periodic onset times.")]
     public class SendCustomWaveform : Sink<Mat>
     {
-        const double MinTimePeriod = PulsePal.MinTimePeriod;
-        const double MaxTimePeriod = PulsePal.MaxTimePeriod;
+        const double MinTimePeriod = PulsePalDevice.MinTimePeriod;
+        const double MaxTimePeriod = PulsePalDevice.MaxTimePeriod;
         const int TimeDecimalPlaces = OutputChannelParameterConfiguration.TimeDecimalPlaces;
 
         /// <summary>
-        /// Gets or sets the name of the serial port used to communicate with the
-        /// Pulse Pal device.
+        /// Gets or sets the name of the Pulse Pal device.
         /// </summary>
-        [TypeConverter(typeof(PortNameConverter))]
-        [Description("The name of the serial port used to communicate with the Pulse Pal device.")]
-        public string PortName { get; set; }
+        [TypeConverter(typeof(DeviceNameConverter))]
+        [Description("The name of the Pulse Pal device.")]
+        public string DeviceName { get; set; } = nameof(PulsePal);
 
         /// <summary>
         /// Gets or sets the identity of the custom pulse train to program.
@@ -58,7 +57,7 @@ namespace Bonsai.PulsePal
         public IObservable<double[]> Process(IObservable<double[]> source)
         {
             return Observable.Using(
-                () => PulsePalManager.ReserveConnection(PortName),
+                () => PulsePalManager.ReserveConnection(DeviceName),
                 pulsePal => source.Do(pulseVoltages =>
                 {
                     lock (pulsePal.PulsePal)
@@ -86,7 +85,7 @@ namespace Bonsai.PulsePal
         public override IObservable<Mat> Process(IObservable<Mat> source)
         {
             return Observable.Using(
-                () => PulsePalManager.ReserveConnection(PortName),
+                () => PulsePalManager.ReserveConnection(DeviceName),
                 pulsePal => source.Do(input =>
                 {
                     var pulseVoltages = new double[input.Cols];

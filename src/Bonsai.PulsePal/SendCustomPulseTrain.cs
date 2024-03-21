@@ -13,12 +13,11 @@ namespace Bonsai.PulsePal
     public class SendCustomPulseTrain : Sink<PulseOnset[]>
     {
         /// <summary>
-        /// Gets or sets the name of the serial port used to communicate with the
-        /// Pulse Pal device.
+        /// Gets or sets the name of the Pulse Pal device.
         /// </summary>
-        [TypeConverter(typeof(PortNameConverter))]
-        [Description("The name of the serial port used to communicate with the Pulse Pal device.")]
-        public string PortName { get; set; }
+        [TypeConverter(typeof(DeviceNameConverter))]
+        [Description("The name of the Pulse Pal device.")]
+        public string DeviceName { get; set; } = nameof(PulsePal);
 
         /// <summary>
         /// Gets or sets the identity of the custom pulse train to program.
@@ -42,7 +41,7 @@ namespace Bonsai.PulsePal
         public override IObservable<PulseOnset[]> Process(IObservable<PulseOnset[]> source)
         {
             return Observable.Using(
-                () => PulsePalManager.ReserveConnection(PortName),
+                () => PulsePalManager.ReserveConnection(DeviceName),
                 pulsePal => source.Do(input =>
                 {
                     lock (pulsePal.PulsePal)
@@ -71,7 +70,7 @@ namespace Bonsai.PulsePal
         public IObservable<double[,]> Process(IObservable<double[,]> source)
         {
             return Observable.Using(
-                () => PulsePalManager.ReserveConnection(PortName),
+                () => PulsePalManager.ReserveConnection(DeviceName),
                 pulsePal => source.Do(input =>
                 {
                     lock (pulsePal.PulsePal)
@@ -99,7 +98,7 @@ namespace Bonsai.PulsePal
         public IObservable<Mat> Process(IObservable<Mat> source)
         {
             return Observable.Using(
-                () => PulsePalManager.ReserveConnection(PortName),
+                () => PulsePalManager.ReserveConnection(DeviceName),
                 pulsePal => source.Do(input =>
                 {
                     var pulseTrain = new double[2, input.Cols];

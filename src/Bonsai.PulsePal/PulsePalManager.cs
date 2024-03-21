@@ -7,32 +7,32 @@ namespace Bonsai.PulsePal
 {
     internal static class PulsePalManager
     {
-        static readonly Dictionary<string, Tuple<PulsePal, RefCountDisposable>> openConnections = new();
+        static readonly Dictionary<string, Tuple<PulsePalDevice, RefCountDisposable>> openConnections = new();
         static readonly object openConnectionsLock = new();
 
-        internal static PulsePalDisposable ReserveConnection(string portName)
+        internal static PulsePalDisposable ReserveConnection(string deviceName)
         {
-            return ReserveConnection(portName, PulsePalConfiguration.Default);
+            return ReserveConnection(deviceName, PulsePalConfiguration.Default);
         }
 
-        internal static PulsePalDisposable ReserveConnection(string portName, PulsePalConfiguration pulsePalConfiguration)
+        internal static PulsePalDisposable ReserveConnection(string deviceName, PulsePalConfiguration pulsePalConfiguration)
         {
-            var connection = default(Tuple<PulsePal, RefCountDisposable>);
+            var connection = default(Tuple<PulsePalDevice, RefCountDisposable>);
             lock (openConnectionsLock)
             {
-                if (string.IsNullOrEmpty(portName))
+                if (string.IsNullOrEmpty(deviceName))
                 {
-                    if (!string.IsNullOrEmpty(pulsePalConfiguration.PortName)) portName = pulsePalConfiguration.PortName;
+                    if (!string.IsNullOrEmpty(pulsePalConfiguration.PortName)) deviceName = pulsePalConfiguration.PortName;
                     else if (openConnections.Count == 1) connection = openConnections.Values.Single();
-                    else throw new ArgumentException("An alias or serial port name must be specified.", nameof(portName));
+                    else throw new ArgumentException("An alias or serial port name must be specified.", nameof(deviceName));
                 }
 
-                if (connection == null && !openConnections.TryGetValue(portName, out connection))
+                if (connection == null && !openConnections.TryGetValue(deviceName, out connection))
                 {
                     var serialPortName = pulsePalConfiguration.PortName;
-                    if (string.IsNullOrEmpty(serialPortName)) serialPortName = portName;
+                    if (string.IsNullOrEmpty(serialPortName)) serialPortName = deviceName;
 
-                    var pulsePal = new PulsePal(serialPortName);
+                    var pulsePal = new PulsePalDevice(serialPortName);
                     try
                     {
                         pulsePal.Open();
@@ -41,12 +41,12 @@ namespace Bonsai.PulsePal
                         var dispose = Disposable.Create(() =>
                         {
                             pulsePal.Close();
-                            openConnections.Remove(portName);
+                            openConnections.Remove(deviceName);
                         });
 
                         var refCount = new RefCountDisposable(dispose);
                         connection = Tuple.Create(pulsePal, refCount);
-                        openConnections.Add(portName, connection);
+                        openConnections.Add(deviceName, connection);
                         return new PulsePalDisposable(pulsePal, refCount);
                     }
                     catch

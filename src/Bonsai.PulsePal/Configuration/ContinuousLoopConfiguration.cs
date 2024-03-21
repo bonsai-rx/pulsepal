@@ -18,7 +18,7 @@ namespace Bonsai.PulsePal
         public bool ContinuousLoop { get; set; }
 
         /// <inheritdoc/>
-        public override void Configure(PulsePal device)
+        public override void Configure(PulsePalDevice device)
         {
             device.SetContinuousLoop(Channel, ContinuousLoop);
         }

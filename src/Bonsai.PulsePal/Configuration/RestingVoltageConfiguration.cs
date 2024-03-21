@@ -20,7 +20,7 @@ namespace Bonsai.PulsePal
         public double RestingVoltage { get; set; }
 
         /// <inheritdoc/>
-        public override void Configure(PulsePal device)
+        public override void Configure(PulsePalDevice device)
         {
             device.SetRestingVoltage(Channel, RestingVoltage);
         }

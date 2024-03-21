@@ -45,12 +45,11 @@ namespace Bonsai.PulsePal
         string INamedElement.Name => $"Set{ExpressionBuilder.GetElementDisplayName(Parameter)}";
 
         /// <summary>
-        /// Gets or sets the name of the serial port used to communicate with the
-        /// Pulse Pal device.
+        /// Gets or sets the name of the Pulse Pal device.
         /// </summary>
-        [TypeConverter(typeof(PortNameConverter))]
-        [Description("The name of the serial port used to communicate with the Pulse Pal device.")]
-        public string PortName { get; set; }
+        [TypeConverter(typeof(DeviceNameConverter))]
+        [Description("The name of the Pulse Pal device.")]
+        public string DeviceName { get; set; } = nameof(PulsePal);
 
         /// <summary>
         /// Gets or sets the channel parameter to configure.
@@ -87,7 +86,7 @@ namespace Bonsai.PulsePal
         public IObservable<TSource> Process<TSource>(IObservable<TSource> source)
         {
             return Observable.Using(
-                () => PulsePalManager.ReserveConnection(PortName),
+                () => PulsePalManager.ReserveConnection(DeviceName),
                 connection => source.Do(input =>
                 {
                     lock (connection.PulsePal)
@@ -109,7 +108,7 @@ namespace Bonsai.PulsePal
         /// sequence but where there is an additional side effect of configuring a
         /// single channel parameter on each Pulse Pal device.
         /// </returns>
-        public IObservable<PulsePal> Process(IObservable<PulsePal> source)
+        public IObservable<PulsePalDevice> Process(IObservable<PulsePalDevice> source)
         {
             return source.Do(Parameter.Configure);
         }

@@ -14,10 +14,10 @@ namespace Bonsai.PulsePal
     [Description("Creates a sequence of custom pulse train onset times and voltages.")]
     public class PulseOnset : Combinator<PulseOnset>
     {
-        const double MinVoltage = PulsePal.MinVoltage;
-        const double MaxVoltage = PulsePal.MaxVoltage;
-        const double MinTimePeriod = PulsePal.MinTimePeriod;
-        const double MaxTimePeriod = PulsePal.MaxTimePeriod;
+        const double MinVoltage = PulsePalDevice.MinVoltage;
+        const double MaxVoltage = PulsePalDevice.MaxVoltage;
+        const double MinTimePeriod = PulsePalDevice.MinTimePeriod;
+        const double MaxTimePeriod = PulsePalDevice.MaxTimePeriod;
         const int VoltageDecimalPlaces = OutputChannelParameterConfiguration.VoltageDecimalPlaces;
         const double VoltageIncrement = OutputChannelParameterConfiguration.VoltageIncrement;
         const int TimeDecimalPlaces = OutputChannelParameterConfiguration.TimeDecimalPlaces;

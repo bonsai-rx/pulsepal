@@ -16,10 +16,10 @@ namespace Bonsai.PulsePal
         const string TimingCategory = "Pulse Timing";
         const string CustomTrainCategory = "Custom Train";
         const string TriggerCategory = "Pulse Trigger";
-        const double MinVoltage = PulsePal.MinVoltage;
-        const double MaxVoltage = PulsePal.MaxVoltage;
-        const double MinTimePeriod = PulsePal.MinTimePeriod;
-        const double MaxTimePeriod = PulsePal.MaxTimePeriod;
+        const double MinVoltage = PulsePalDevice.MinVoltage;
+        const double MaxVoltage = PulsePalDevice.MaxVoltage;
+        const double MinTimePeriod = PulsePalDevice.MinTimePeriod;
+        const double MaxTimePeriod = PulsePalDevice.MaxTimePeriod;
         const int VoltageDecimalPlaces = OutputChannelParameterConfiguration.VoltageDecimalPlaces;
         const double VoltageIncrement = OutputChannelParameterConfiguration.VoltageIncrement;
         const int TimeDecimalPlaces = OutputChannelParameterConfiguration.TimeDecimalPlaces;
@@ -29,13 +29,12 @@ namespace Bonsai.PulsePal
             : $"ConfigureOutput{Channel}";
 
         /// <summary>
-        /// Gets or sets the name of the serial port used to communicate with the
-        /// Pulse Pal device.
+        /// Gets or sets the name of the Pulse Pal device.
         /// </summary>
         [Category(ChannelCategory)]
-        [TypeConverter(typeof(PortNameConverter))]
-        [Description("The name of the serial port used to communicate with the Pulse Pal device.")]
-        public string PortName { get; set; }
+        [TypeConverter(typeof(DeviceNameConverter))]
+        [Description("The name of the Pulse Pal device.")]
+        public string DeviceName { get; set; } = nameof(PulsePal);
 
         /// <summary>
         /// Gets or sets the output channel to configure.
@@ -237,7 +236,7 @@ namespace Bonsai.PulsePal
         public override IObservable<TSource> Process<TSource>(IObservable<TSource> source)
         {
             return Observable.Using(
-                () => PulsePalManager.ReserveConnection(PortName),
+                () => PulsePalManager.ReserveConnection(DeviceName),
                 connection => source.Do(input =>
                 {
                     lock (connection.PulsePal)
@@ -259,12 +258,12 @@ namespace Bonsai.PulsePal
         /// sequence but where there is an additional side effect of configuring the
         /// output channel parameters on each Pulse Pal device.
         /// </returns>
-        public IObservable<PulsePal> Process(IObservable<PulsePal> source)
+        public IObservable<PulsePalDevice> Process(IObservable<PulsePalDevice> source)
         {
             return source.Do(Configure);
         }
 
-        internal void Configure(PulsePal pulsePal)
+        internal void Configure(PulsePalDevice pulsePal)
         {
             var channel = Channel;
             pulsePal.SetBiphasic(channel, Biphasic);

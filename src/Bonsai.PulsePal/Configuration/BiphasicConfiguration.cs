@@ -18,7 +18,7 @@ namespace Bonsai.PulsePal
         public bool Biphasic { get; set; }
 
         /// <inheritdoc/>
-        public override void Configure(PulsePal device)
+        public override void Configure(PulsePalDevice device)
         {
             device.SetBiphasic(Channel, Biphasic);
         }

@@ -9,7 +9,7 @@ namespace Bonsai.PulsePal
     /// <summary>
     /// Represents a Pulse Pal device.
     /// </summary>
-    public sealed class PulsePal : IDisposable
+    public sealed class PulsePalDevice : IDisposable
     {
         internal const double MinVoltage = -10;
         internal const double MaxVoltage = 10;
@@ -47,13 +47,13 @@ namespace Bonsai.PulsePal
         readonly byte[] readBuffer;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PulsePal"/> class using
+        /// Initializes a new instance of the <see cref="PulsePalDevice"/> class using
         /// the specified port name.
         /// </summary>
         /// <param name="portName">
         /// The name of the serial port used to communicate with the Pulse Pal device.
         /// </param>
-        public PulsePal(string portName)
+        public PulsePalDevice(string portName)
         {
             serialPort = new SerialPort(portName);
             serialPort.BaudRate = BaudRate;
@@ -79,7 +79,7 @@ namespace Bonsai.PulsePal
         }
 
         /// <summary>
-        /// Gets a value indicating the open or closed status of the <see cref="PulsePal"/> object.
+        /// Gets a value indicating the open or closed status of the <see cref="PulsePalDevice"/> object.
         /// </summary>
         public bool IsOpen
         {
@@ -818,9 +818,9 @@ namespace Bonsai.PulsePal
         {
             int offset;
             double previousTime;
-            readonly PulsePal device;
+            readonly PulsePalDevice device;
 
-            public CommandWriter(PulsePal pulsePal)
+            public CommandWriter(PulsePalDevice pulsePal)
             {
                 offset = 0;
                 previousTime = -MinTimePeriod;

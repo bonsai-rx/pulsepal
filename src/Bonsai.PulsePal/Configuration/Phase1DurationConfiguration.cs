@@ -21,7 +21,7 @@ namespace Bonsai.PulsePal
         public double Phase1Duration { get; set; } = MinTimePeriod;
 
         /// <inheritdoc/>
-        public override void Configure(PulsePal device)
+        public override void Configure(PulsePalDevice device)
         {
             device.SetPhase1Duration(Channel, Phase1Duration);
         }

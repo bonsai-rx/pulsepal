@@ -20,7 +20,7 @@ namespace Bonsai.PulsePal
         public double Phase1Voltage { get; set; }
 
         /// <inheritdoc/>
-        public override void Configure(PulsePal device)
+        public override void Configure(PulsePalDevice device)
         {
             device.SetPhase1Voltage(Channel, Phase1Voltage);
         }

@@ -11,6 +11,6 @@
         /// Pulse Pal device.
         /// </summary>
         /// <param name="device">The Pulse Pal device to configure.</param>
-        public abstract void Configure(PulsePal device);
+        public abstract void Configure(PulsePalDevice device);
     }
 }

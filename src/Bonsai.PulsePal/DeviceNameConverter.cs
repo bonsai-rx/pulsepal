@@ -5,7 +5,7 @@ using Bonsai.Expressions;
 
 namespace Bonsai.PulsePal
 {
-    class PortNameConverter : StringConverter
+    class DeviceNameConverter : StringConverter
     {
         public override bool GetStandardValuesSupported(ITypeDescriptorContext context)
         {
@@ -21,9 +21,9 @@ namespace Bonsai.PulsePal
                 {
                     var portNames = (from builder in workflowBuilder.Workflow.Descendants()
                                      where builder is not DisableBuilder
-                                     let createPort = ExpressionBuilder.GetWorkflowElement(builder) as CreatePulsePal
-                                     where createPort != null && !string.IsNullOrEmpty(createPort.PortName)
-                                     select !string.IsNullOrEmpty(createPort.Name) ? createPort.Name : createPort.PortName)
+                                     let createPulsePal = ExpressionBuilder.GetWorkflowElement(builder) as CreatePulsePal
+                                     where createPulsePal != null && !string.IsNullOrEmpty(createPulsePal.PortName)
+                                     select !string.IsNullOrEmpty(createPulsePal.DeviceName) ? createPulsePal.DeviceName : createPulsePal.PortName)
                                      .Distinct()
                                      .ToList();
                     if (portNames.Count > 0)

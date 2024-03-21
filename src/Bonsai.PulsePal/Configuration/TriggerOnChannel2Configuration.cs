@@ -18,7 +18,7 @@ namespace Bonsai.PulsePal
         public bool TriggerOnChannel2 { get; set; }
 
         /// <inheritdoc/>
-        public override void Configure(PulsePal device)
+        public override void Configure(PulsePalDevice device)
         {
             device.SetTriggerOnChannel2(Channel, TriggerOnChannel2);
         }

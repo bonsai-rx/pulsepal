@@ -16,7 +16,7 @@ namespace Bonsai.PulsePal
         public TriggerMode TriggerMode { get; set; }
 
         /// <inheritdoc/>
-        public override void Configure(PulsePal device)
+        public override void Configure(PulsePalDevice device)
         {
             device.SetTriggerMode(Channel, TriggerMode);
         }
