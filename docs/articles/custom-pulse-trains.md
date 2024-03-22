@@ -35,7 +35,7 @@ Custom pulse trains can also be constructed from a function generator and sent t
 :::
 
 
-> [!CAUTION]
+> [!WARNING]
 > The [`SendCustomWaveform`](xref:Bonsai.PulsePal.SendCustomWaveform) operator does not "exactly" reproduce the input waveform as only pulse onset and voltages are sent. 
 > Similar to the [`SendCustomPulseTrain`](xref:Bonsai.PulsePal.SendCustomPulseTrain) operator, pulse duration is set by the `Phase1Duration` on the output channel during playback.
 > This can be addressed by setting the `Phase1Duration` to the value that matches the sampling rate of the [`SendCustomWaveform`](xref:Bonsai.PulsePal.SendCustomWaveform) operator.
@@ -54,7 +54,7 @@ Besides setting the output channel to playback the pulse train from with the `Ch
 
 
 
-> [!CAUTION] 
+> [!WARNING] 
 > The `CustomTrainLoop` differs significantly from the `ContinuousLoop` playback of normal pulse trains (which are looped continuously)
 
 > [!NOTE] 
