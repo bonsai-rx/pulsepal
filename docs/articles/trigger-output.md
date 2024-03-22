@@ -4,9 +4,12 @@ Triggering of the Pulse Pal output channels can be done either through the hardw
 ## Hardware trigger
 
 ### Linking output channels to hardware trigger channels
-When configuring output channels in the [`CreatePulsepal`](xref:Bonsai.PulsePal.CreatePulsePal) or [`ConfigureOutputChannel`](xref:Bonsai.PulsePal.ConfigureOutputChannel) operators, the `PulseTrigger` properties must be set to link playback to hardware triggers. A image of the relevant settings is shown below. Playback can be linked to either of the hardware trigger channels. 
+When configuring output channels in the [`CreatePulsepal`](xref:Bonsai.PulsePal.CreatePulsePal) or [`ConfigureOutputChannel`](xref:Bonsai.PulsePal.ConfigureOutputChannel) operators, these properties must be set to link playback to either of the hardware triggers. 
 
-!['Pulse Trigger Settings'](~/images/pulse-trigger-outlined.png)
+|     Category     |   Property Name     | Value        | Description     |
+| ---------------- | ------------------- | ----------   | --------------- |
+| Pulse Trigger    | `TriggerOnChannel1` | True/False   | Set to True to enable trigger on this hardware channel |
+| Pulse Trigger    | `TriggerOnChannel2` | True/False   | Set to True to enable trigger on this hardware channel |
 
 
 ### Configuring hardware trigger channels

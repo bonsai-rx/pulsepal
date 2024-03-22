@@ -6,7 +6,7 @@ The [`CreatePulsePal`](xref:Bonsai.PulsePal.CreatePulsePal) operator establishes
 :::
 
 > [!NOTE]
-> If there is more than one Pulse Pal connected, they can be assigned different names using the `DeviceName` property (which has a default value of `PulsePal`). In downstream operators, you can specify which PulsePal confiuguration to modify by changing the `DeviceName` property.
+> If there is more than one Pulse Pal connected, they can be assigned different names using the `DeviceName` property (which has a default value of `PulsePal`). In downstream operators, you can specify which PulsePal configuration to modify by changing the `DeviceName` property.
 
 ## Configuring pulse trains and hardware triggers
  
