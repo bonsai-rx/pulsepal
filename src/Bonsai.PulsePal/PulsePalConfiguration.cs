@@ -6,20 +6,20 @@
 
         public string PortName { get; set; }
 
-        public ConfigureOutputChannelCollection OutputChannels { get; } = new();
+        public OutputChannelConfigurationCollection OutputChannels { get; } = new();
 
-        public ConfigureTriggerChannelCollection TriggerChannels { get; } = new();
+        public TriggerChannelConfigurationCollection TriggerChannels { get; } = new();
 
         public void Configure(PulsePalDevice pulsePal)
         {
-            foreach (var outputChannel in OutputChannels)
+            foreach (var channelConfiguration in OutputChannels)
             {
-                outputChannel.Configure(pulsePal);
+                channelConfiguration.Configure(pulsePal);
             }
 
-            foreach (var triggerChannel in TriggerChannels)
+            foreach (var channelConfiguration in TriggerChannels)
             {
-                triggerChannel.Configure(pulsePal);
+                channelConfiguration.Configure(pulsePal);
             }
         }
     }

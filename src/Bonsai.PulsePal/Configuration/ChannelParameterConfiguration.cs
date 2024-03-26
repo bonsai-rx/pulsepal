@@ -6,6 +6,8 @@
     /// </summary>
     public abstract class ChannelParameterConfiguration
     {
+        internal const string ChannelCategory = "Channel";
+
         /// <summary>
         /// Applies the channel parameter configuration to the specified
         /// Pulse Pal device.

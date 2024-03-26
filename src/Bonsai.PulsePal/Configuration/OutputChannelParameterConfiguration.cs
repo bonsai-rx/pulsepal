@@ -19,7 +19,8 @@ namespace Bonsai.PulsePal
         /// <summary>
         /// Gets or sets a value specifying the output channel to configure.
         /// </summary>
+        [Category(ChannelCategory)]
         [Description("Specifies the output channel to configure.")]
-        public OutputChannel Channel { get; set; } = OutputChannel.Channel1;
+        public OutputChannel Channel { get; set; }
     }
 }

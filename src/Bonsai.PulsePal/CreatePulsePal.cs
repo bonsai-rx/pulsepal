@@ -14,8 +14,6 @@ namespace Bonsai.PulsePal
     [Description("Creates and configures a serial connection to a Pulse Pal device.")]
     public class CreatePulsePal : Source<PulsePalDevice>
     {
-        const string ChannelCategory = "Channel";
-
         readonly PulsePalConfiguration configuration = new();
 
         /// <summary>
@@ -39,16 +37,16 @@ namespace Bonsai.PulsePal
         /// <summary>
         /// Gets the collection of output channels to configure on the Pulse Pal device.
         /// </summary>
-        [Category(ChannelCategory)]
+        [Category(ChannelParameterConfiguration.ChannelCategory)]
         [Description("The collection of output channels to configure on the Pulse Pal device.")]
-        public ConfigureOutputChannelCollection OutputChannels => configuration.OutputChannels;
+        public OutputChannelConfigurationCollection OutputChannels => configuration.OutputChannels;
 
         /// <summary>
         /// Gets the collection of trigger channels to configure on the Pulse Pal device.
         /// </summary>
-        [Category(ChannelCategory)]
+        [Category(ChannelParameterConfiguration.ChannelCategory)]
         [Description("The collection of trigger channels to configure on the Pulse Pal device.")]
-        public ConfigureTriggerChannelCollection TriggerChannels => configuration.TriggerChannels;
+        public TriggerChannelConfigurationCollection TriggerChannels => configuration.TriggerChannels;
 
         /// <summary>
         /// Generates an observable sequence that contains the serial interface object.

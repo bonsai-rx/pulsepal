@@ -9,9 +9,10 @@ namespace Bonsai.PulsePal
     public abstract class TriggerChannelParameterConfiguration : ChannelParameterConfiguration
     {
         /// <summary>
-        /// Gets or sets a value specifying the output channel to configure.
+        /// Gets or sets a value specifying the trigger channel to configure.
         /// </summary>
-        [Description("Specifies the output channel to configure.")]
-        public TriggerChannel Channel { get; set; } = TriggerChannel.Channel1;
+        [Category(ChannelCategory)]
+        [Description("Specifies the trigger channel to configure.")]
+        public TriggerChannel Channel { get; set; }
     }
 }

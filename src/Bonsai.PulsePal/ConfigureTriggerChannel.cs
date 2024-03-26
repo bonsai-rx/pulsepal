@@ -7,11 +7,11 @@ namespace Bonsai.PulsePal
     /// <summary>
     /// Represents an operator that configures trigger channel parameters on a Pulse Pal device.
     /// </summary>
+    [Combinator]
+    [WorkflowElementCategory(ElementCategory.Sink)]
     [Description("Configures trigger channel parameters on a Pulse Pal device.")]
-    public class ConfigureTriggerChannel : Sink, INamedElement
+    public class ConfigureTriggerChannel : TriggerChannelConfiguration, INamedElement
     {
-        const string ChannelCategory = "Channel";
-
         string INamedElement.Name => Channel == 0
             ? nameof(ConfigureTriggerChannel)
             : $"ConfigureTrigger{Channel}";
@@ -23,20 +23,6 @@ namespace Bonsai.PulsePal
         [TypeConverter(typeof(DeviceNameConverter))]
         [Description("The name of the Pulse Pal device.")]
         public string DeviceName { get; set; } = nameof(PulsePal);
-
-        /// <summary>
-        /// Gets or sets the output channel to configure.
-        /// </summary>
-        [Category(ChannelCategory)]
-        [Description("The trigger channel to configure.")]
-        public TriggerChannel Channel { get; set; }
-
-        /// <summary>
-        /// Gets or sets a value specifying the behavior of the trigger channel.
-        /// </summary>
-        [Category(ChannelCategory)]
-        [Description("Specifies the behavior of the trigger channel.")]
-        public TriggerMode TriggerMode { get; set; }
 
         /// <summary>
         /// Configures the trigger channel parameters on the Pulse Pal device whenever
@@ -55,7 +41,7 @@ namespace Bonsai.PulsePal
         /// trigger channel parameters on the Pulse Pal device whenever the sequence
         /// emits a notification.
         /// </returns>
-        public override IObservable<TSource> Process<TSource>(IObservable<TSource> source)
+        public IObservable<TSource> Process<TSource>(IObservable<TSource> source)
         {
             return Observable.Using(
                 () => PulsePalManager.ReserveConnection(DeviceName),
@@ -83,18 +69,6 @@ namespace Bonsai.PulsePal
         public IObservable<PulsePalDevice> Process(IObservable<PulsePalDevice> source)
         {
             return source.Do(Configure);
-        }
-
-        internal void Configure(PulsePalDevice pulsePal)
-        {
-            var channel = Channel;
-            pulsePal.SetTriggerMode(channel, TriggerMode);
-        }
-
-        /// <inheritdoc/>
-        public override string ToString()
-        {
-            return Channel == 0 ? nameof(ConfigureTriggerChannel) : $"{Channel}";
         }
     }
 }
