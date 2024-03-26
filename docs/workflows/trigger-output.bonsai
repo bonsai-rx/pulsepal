@@ -14,7 +14,7 @@
       </Expression>
       <Expression xsi:type="Combinator">
         <Combinator xsi:type="pal:TriggerOutputChannels">
-          <pal:PortName>COM1</pal:PortName>
+          <pal:DeviceName>PulsePal</pal:DeviceName>
           <pal:Channels />
         </Combinator>
       </Expression>

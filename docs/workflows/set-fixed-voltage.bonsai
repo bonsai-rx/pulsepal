@@ -8,13 +8,13 @@
     <Nodes>
       <Expression xsi:type="Combinator">
         <Combinator xsi:type="wie:KeyDown">
-          <wie:Filter>None</wie:Filter>
+          <wie:Filter>V</wie:Filter>
           <wie:SuppressRepetitions>false</wie:SuppressRepetitions>
         </Combinator>
       </Expression>
       <Expression xsi:type="Combinator">
         <Combinator xsi:type="pal:SetFixedVoltage">
-          <pal:PortName>COM1</pal:PortName>
+          <pal:DeviceName>PulsePal</pal:DeviceName>
           <pal:Channel>1</pal:Channel>
           <pal:Voltage>5</pal:Voltage>
         </Combinator>

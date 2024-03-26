@@ -21,6 +21,7 @@
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="pal:ConfigureChannelParameter">
+                <pal:DeviceName>PulsePal</pal:DeviceName>
                 <pal:Parameter xsi:type="pal:BiphasicConfiguration">
                   <pal:Channel>1</pal:Channel>
                   <pal:Biphasic>false</pal:Biphasic>
@@ -48,6 +49,7 @@
           <pal:Phase1Voltage>0</pal:Phase1Voltage>
           <pal:Phase2Voltage>0</pal:Phase2Voltage>
           <pal:RestingVoltage>0</pal:RestingVoltage>
+          <pal:PulseTrainDelay>0.0001</pal:PulseTrainDelay>
           <pal:Phase1Duration>0.0001</pal:Phase1Duration>
           <pal:InterPhaseInterval>0</pal:InterPhaseInterval>
           <pal:Phase2Duration>0.0001</pal:Phase2Duration>
@@ -55,13 +57,13 @@
           <pal:BurstDuration>0</pal:BurstDuration>
           <pal:InterBurstInterval>0.0001</pal:InterBurstInterval>
           <pal:PulseTrainDuration>0.0001</pal:PulseTrainDuration>
-          <pal:PulseTrainDelay>0.0001</pal:PulseTrainDelay>
           <pal:CustomTrainIdentity>None</pal:CustomTrainIdentity>
           <pal:CustomTrainTarget>PulseOnset</pal:CustomTrainTarget>
           <pal:CustomTrainLoop>false</pal:CustomTrainLoop>
           <pal:TriggerOnChannel1>false</pal:TriggerOnChannel1>
           <pal:TriggerOnChannel2>false</pal:TriggerOnChannel2>
           <pal:ContinuousLoop>false</pal:ContinuousLoop>
+          <pal:DeviceName>PulsePal</pal:DeviceName>
         </Combinator>
       </Expression>
       <Expression xsi:type="Combinator">
@@ -74,6 +76,7 @@
         <Combinator xsi:type="pal:ConfigureTriggerChannel">
           <pal:Channel>1</pal:Channel>
           <pal:TriggerMode>Normal</pal:TriggerMode>
+          <pal:DeviceName>PulsePal</pal:DeviceName>
         </Combinator>
       </Expression>
     </Nodes>

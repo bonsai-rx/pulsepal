@@ -19,7 +19,7 @@
       </Expression>
       <Expression xsi:type="Combinator">
         <Combinator xsi:type="pal:UpdateDisplay">
-          <pal:PortName>pal1</pal:PortName>
+          <pal:DeviceName>PulsePal</pal:DeviceName>
         </Combinator>
       </Expression>
     </Nodes>

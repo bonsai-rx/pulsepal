@@ -26,7 +26,7 @@
       </Expression>
       <Expression xsi:type="Combinator">
         <Combinator xsi:type="pal:SendCustomWaveform">
-          <pal:PortName>pal1</pal:PortName>
+          <pal:DeviceName>PulsePal</pal:DeviceName>
           <pal:CustomTrainIdentity>CustomTrain1</pal:CustomTrainIdentity>
           <pal:SamplingPeriod>0.1</pal:SamplingPeriod>
         </Combinator>
