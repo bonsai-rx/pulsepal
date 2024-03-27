@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WorkflowBuilder Version="2.8.1"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xmlns:wie="clr-namespace:Bonsai.Windows.Input;assembly=Bonsai.Windows.Input"
+                 xmlns:pal="clr-namespace:Bonsai.PulsePal;assembly=Bonsai.PulsePal"
+                 xmlns="https://bonsai-rx.org/2018/workflow">
+  <Workflow>
+    <Nodes>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="wie:KeyDown">
+          <wie:Filter>A</wie:Filter>
+          <wie:SuppressRepetitions>false</wie:SuppressRepetitions>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="GroupWorkflow">
+        <Name>Configure Channel Parameter</Name>
+        <Workflow>
+          <Nodes>
+            <Expression xsi:type="WorkflowInput">
+              <Name>Source1</Name>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="pal:ConfigureChannelParameter">
+                <pal:DeviceName>PulsePal</pal:DeviceName>
+                <pal:Parameter xsi:type="pal:BiphasicConfiguration">
+                  <pal:Channel>1</pal:Channel>
+                  <pal:Biphasic>false</pal:Biphasic>
+                </pal:Parameter>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="WorkflowOutput" />
+          </Nodes>
+          <Edges>
+            <Edge From="0" To="1" Label="Source1" />
+            <Edge From="1" To="2" Label="Source1" />
+          </Edges>
+        </Workflow>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="wie:KeyDown">
+          <wie:Filter>S</wie:Filter>
+          <wie:SuppressRepetitions>false</wie:SuppressRepetitions>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="pal:ConfigureOutputChannel">
+          <pal:Channel>1</pal:Channel>
+          <pal:Biphasic>false</pal:Biphasic>
+          <pal:Phase1Voltage>0</pal:Phase1Voltage>
+          <pal:Phase2Voltage>0</pal:Phase2Voltage>
+          <pal:RestingVoltage>0</pal:RestingVoltage>
+          <pal:PulseTrainDelay>0.0001</pal:PulseTrainDelay>
+          <pal:Phase1Duration>0.0001</pal:Phase1Duration>
+          <pal:InterPhaseInterval>0</pal:InterPhaseInterval>
+          <pal:Phase2Duration>0.0001</pal:Phase2Duration>
+          <pal:InterPulseInterval>0.0001</pal:InterPulseInterval>
+          <pal:BurstDuration>0</pal:BurstDuration>
+          <pal:InterBurstInterval>0.0001</pal:InterBurstInterval>
+          <pal:PulseTrainDuration>0.0001</pal:PulseTrainDuration>
+          <pal:CustomTrainIdentity>None</pal:CustomTrainIdentity>
+          <pal:CustomTrainTarget>PulseOnset</pal:CustomTrainTarget>
+          <pal:CustomTrainLoop>false</pal:CustomTrainLoop>
+          <pal:TriggerOnChannel1>false</pal:TriggerOnChannel1>
+          <pal:TriggerOnChannel2>false</pal:TriggerOnChannel2>
+          <pal:ContinuousLoop>false</pal:ContinuousLoop>
+          <pal:DeviceName>PulsePal</pal:DeviceName>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="wie:KeyDown">
+          <wie:Filter>D</wie:Filter>
+          <wie:SuppressRepetitions>false</wie:SuppressRepetitions>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="pal:ConfigureTriggerChannel">
+          <pal:Channel>1</pal:Channel>
+          <pal:TriggerMode>Normal</pal:TriggerMode>
+          <pal:DeviceName>PulsePal</pal:DeviceName>
+        </Combinator>
+      </Expression>
+    </Nodes>
+    <Edges>
+      <Edge From="0" To="1" Label="Source1" />
+      <Edge From="2" To="3" Label="Source1" />
+      <Edge From="4" To="5" Label="Source1" />
+    </Edges>
+  </Workflow>
+</WorkflowBuilder>

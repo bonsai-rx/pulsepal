@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WorkflowBuilder Version="2.8.1"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xmlns:dsp="clr-namespace:Bonsai.Dsp;assembly=Bonsai.Dsp"
+                 xmlns:rx="clr-namespace:Bonsai.Reactive;assembly=Bonsai.Core"
+                 xmlns:pal="clr-namespace:Bonsai.PulsePal;assembly=Bonsai.PulsePal"
+                 xmlns="https://bonsai-rx.org/2018/workflow">
+  <Workflow>
+    <Nodes>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="dsp:FunctionGenerator">
+          <dsp:BufferLength>1000</dsp:BufferLength>
+          <dsp:Frequency>10</dsp:Frequency>
+          <dsp:Waveform>Square</dsp:Waveform>
+          <dsp:SampleRate>100</dsp:SampleRate>
+          <dsp:Depth>F32</dsp:Depth>
+          <dsp:Amplitude>10</dsp:Amplitude>
+          <dsp:Offset>0</dsp:Offset>
+          <dsp:Phase>0</dsp:Phase>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="rx:Take">
+          <rx:Count>1</rx:Count>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="pal:SendCustomWaveform">
+          <pal:DeviceName>PulsePal</pal:DeviceName>
+          <pal:CustomTrainIdentity>CustomTrain1</pal:CustomTrainIdentity>
+          <pal:SamplingPeriod>0.1</pal:SamplingPeriod>
+        </Combinator>
+      </Expression>
+    </Nodes>
+    <Edges>
+      <Edge From="0" To="1" Label="Source1" />
+      <Edge From="1" To="2" Label="Source1" />
+    </Edges>
+  </Workflow>
+</WorkflowBuilder>

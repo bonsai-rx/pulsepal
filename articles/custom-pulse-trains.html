@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Custom Pulse Trains | Bonsai.PulsePal </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Custom Pulse Trains | Bonsai.PulsePal ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bonsai-rx/pulsepal/blob/main/docs/articles/custom-pulse-trains.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="Bonsai - PulsePal">
+            Bonsai - PulsePal
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="custom-pulse-trains">Custom Pulse Trains</h1>
+
+<p>The <code>Bonsai.PulsePal</code> package provides a set of operators for creating more complex pulse trains and waveforms such as the example below.</p>
+<p><img src="../images/PulsePalWiki-CustomPulseTrain.png" alt="'PulsePal Wiki-Custom Train'"></p>
+<p>(Image reproduced from the <a href="https://sites.google.com/site/pulsepalwiki/">Pulse Pal Wiki</a>)</p>
+<p>Custom pulse trains are uploaded to the Pulse Pal, which has 2 memory slots for 2 custom pulse trains of up to 1000 pulses each. Custom pulse trains are defined by an array of doubles specifying the pulse onset times (with respect to trigger onset) and voltages. Pulse duration is set separately by the <code>Phase1Duration</code> on the output channel that the custom pulse train is being played (and is thus identical for all the pulses).</p>
+<h2 id="constructing-custom-pulse-trains">Constructing custom pulse trains</h2>
+<p>Custom pulse trains can be constructed using the <a class="xref" href="../api/Bonsai.PulsePal.CustomPulseTrain.html"><code>CustomPulseTrain</code></a> operator and sent to the device using the <a class="xref" href="../api/Bonsai.PulsePal.SendCustomPulseTrain.html"><code>SendCustomPulseTrain</code></a> operator. When sending the custom pulse train to the Pulse Pal, the <code>CustomTrainIdentifier</code> needs to be set to either of the two custom train IDs that the Pulse Pal can store. Although the <code>Phase1Duration</code> property only needs to be set during playback, it can be set at the same time using the <a class="xref" href="../api/Bonsai.PulsePal.ConfigureChannelParameter.html"><code>ConfigureChannelParameter</code></a> operator with the <code>Phase1Duration</code> property. The workflow below encapsulates all of these steps.</p>
+<div class="workflow"><p><img src="../workflows/create-custom-pulsetrain.bonsai" alt="Create Custom Pulse Trains"></p>
+</div>
+<p>In the <a class="xref" href="../api/Bonsai.PulsePal.CustomPulseTrain.html"><code>CustomPulseTrain</code></a> operator, the array of doubles specifying the pulse onset times and voltages can be set using the <code>PulseOnsetCollection</code> editor. The screenshot below reproduces the example custom pulse train in the image at the beginning of this section.</p>
+<p><img src="../images/pulse-onset-collection.png" width="500px" alt="'Bonsai - PulseOnsetCollection'"></p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Pulse onset times and voltages are absolute values (they do not stack).</p>
+</div>
+<p>An alternate way of constructing the custom pulse train is to create a series of individual pulses using the <a class="xref" href="../api/Bonsai.PulsePal.PulseOnset.html"><code>PulseOnset</code></a> operator, concatenate it and pass it as an array to the <a class="xref" href="../api/Bonsai.PulsePal.SendCustomPulseTrain.html"><code>SendCustomPulseTrain</code></a> operator as follows.</p>
+<div class="workflow"><p><img src="../workflows/concat-pulse-onset.bonsai" alt="Concat pulse onset"></p>
+</div>
+<h2 id="custom-waveform-generation">Custom waveform generation</h2>
+<p>Custom pulse trains can also be constructed from a function generator and sent to the Pulse Pal using the <a class="xref" href="../api/Bonsai.PulsePal.SendCustomWaveform.html"><code>SendCustomWaveform</code></a> operator. When sending the custom waveform to the Pulse Pal, the <code>CustomTrainIdentifier</code> needs to be set to either of the two custom train IDs that the Pulse Pal can store. As the custom pulse train is limited to 1000 pulses, only the first buffer of the function generator output should be captured and sent.</p>
+<div class="workflow"><p><img src="../workflows/send-custom-waveform.bonsai" alt="Send Custom Waveform"></p>
+</div>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>The <a class="xref" href="../api/Bonsai.PulsePal.SendCustomWaveform.html"><code>SendCustomWaveform</code></a> operator does not &quot;exactly&quot; reproduce the input waveform as only pulse onset and voltages are sent.
+Similar to the <a class="xref" href="../api/Bonsai.PulsePal.SendCustomPulseTrain.html"><code>SendCustomPulseTrain</code></a> operator, pulse duration is set by the <code>Phase1Duration</code> on the output channel during playback.
+This can be addressed by setting the <code>Phase1Duration</code> to the value that matches the sampling rate of the <a class="xref" href="../api/Bonsai.PulsePal.SendCustomWaveform.html"><code>SendCustomWaveform</code></a> operator.
+However it is still advised that custom pulse trains generated by this operator be verified with an oscilloscope.</p>
+</div>
+<h2 id="custom-train-playback-settings">Custom train playback settings</h2>
+<p>Besides configuring the correct output channel to playback the pulse train from the <code>Channel</code> property in either the <a class="xref" href="../api/Bonsai.PulsePal.CreatePulsePal.html"><code>CreatePulsepal</code></a> or <a class="xref" href="../api/Bonsai.PulsePal.ConfigureOutputChannel.html"><code>ConfigureOutputChannel</code></a> operators, there are a few unique properties which must be set on the channel to enable custom train playback.</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Property Name</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Custom Train</td>
+<td><code>CustomTrainIdentity</code></td>
+<td>CustomTrain1/CustomTrain2</td>
+<td>Sets which of the two custom trains are played back on that output channel.</td>
+</tr>
+<tr>
+<td>Custom Train</td>
+<td><code>CustomTrainLoop</code></td>
+<td>True/False</td>
+<td>If set to true, the custom train playback is looped continuously until the <code>PulseTrainDuration</code> is finished.</td>
+</tr>
+<tr>
+<td>Custom Train</td>
+<td><code>CustomTrainTarget </code></td>
+<td>PulseOnset/BurstOnset</td>
+<td>The default (PulseOnset) is the behaviour that has been discussed in this article, see below note.</td>
+</tr>
+<tr>
+<td>Pulse Timing</td>
+<td><code>Phase1Duration</code></td>
+<td>0.0001 - 3600 (secs)</td>
+<td>The duration of each pulse in the custom pulse train is set by this property and is identical for all the pulses.</td>
+</tr>
+</tbody>
+</table>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>The <code>CustomTrainLoop</code> differs significantly from the <code>ContinuousLoop</code> playback of normal pulse trains (which are looped continuously)</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If <code>CustomTrainTarget</code>is set to <code>BurstOnset</code>, the onset times and voltages that are defined for pulses in the custom pulse train are instead converted to onset times and voltages for <strong>bursts of pulses</strong>. When this option  is set, the <code>BurstDuration</code>, <code>Phase1Duration</code> and <code>InterPulseInterval</code> properties needs to be defined.</p>
+</div>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bonsai-rx/pulsepal/blob/main/docs/articles/custom-pulse-trains.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          &copy; 2024 Bonsai Foundation CIC and Contributors. Made with <a href="https://dotnet.github.io/docfx">docfx</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

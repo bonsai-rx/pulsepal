@@ -1,0 +1,798 @@
+{
+  "source_base_path": "D:/a/pulsepal/pulsepal/docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.BiphasicConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.BiphasicConfiguration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.BurstDurationConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.BurstDurationConfiguration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.ChannelParameterConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.ChannelParameterConfiguration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.ChannelTriggers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.ChannelTriggers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.ConfigureChannelParameter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.ConfigureChannelParameter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.ConfigureOutputChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.ConfigureOutputChannel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.ConfigureTriggerChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.ConfigureTriggerChannel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.ContinuousLoopConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.ContinuousLoopConfiguration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.CreatePulsePal.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.CreatePulsePal.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.CustomPulseTrain.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.CustomPulseTrain.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.CustomTrainId.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.CustomTrainId.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.CustomTrainIdentityConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.CustomTrainIdentityConfiguration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.CustomTrainLoopConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.CustomTrainLoopConfiguration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.CustomTrainTarget.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.CustomTrainTarget.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.CustomTrainTargetConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.CustomTrainTargetConfiguration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.InterBurstIntervalConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.InterBurstIntervalConfiguration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.InterPhaseIntervalConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.InterPhaseIntervalConfiguration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.InterPulseIntervalConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.InterPulseIntervalConfiguration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.OutputChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.OutputChannel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.OutputChannelConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.OutputChannelConfiguration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.OutputChannelConfigurationCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.OutputChannelConfigurationCollection.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.OutputChannelParameterConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.OutputChannelParameterConfiguration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.Phase1DurationConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.Phase1DurationConfiguration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.Phase1VoltageConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.Phase1VoltageConfiguration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.Phase2DurationConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.Phase2DurationConfiguration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.Phase2VoltageConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.Phase2VoltageConfiguration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.PolymorphicCombinator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.PolymorphicCombinator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.PulseOnset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.PulseOnset.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.PulsePalDevice.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.PulsePalDevice.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.PulseTrainDelayConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.PulseTrainDelayConfiguration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.PulseTrainDurationConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.PulseTrainDurationConfiguration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.RestingVoltageConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.RestingVoltageConfiguration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.SendCustomPulseTrain.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.SendCustomPulseTrain.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.SendCustomWaveform.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.SendCustomWaveform.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.SetFixedVoltage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.SetFixedVoltage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.TriggerChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.TriggerChannel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.TriggerChannelConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.TriggerChannelConfiguration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.TriggerChannelConfigurationCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.TriggerChannelConfigurationCollection.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.TriggerChannelParameterConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.TriggerChannelParameterConfiguration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.TriggerMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.TriggerMode.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.TriggerModeConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.TriggerModeConfiguration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.TriggerOnChannel1Configuration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.TriggerOnChannel1Configuration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.TriggerOnChannel2Configuration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.TriggerOnChannel2Configuration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.TriggerOutputChannels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.TriggerOutputChannels.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.UpdateDisplay.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.UpdateDisplay.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.PulsePal.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.PulsePal.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/custom-pulse-trains.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/custom-pulse-trains.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/programming-pulse-trains.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/programming-pulse-trains.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html"
+        },
+        ".json": {
+          "relative_path": "articles/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/trigger-output.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/trigger-output.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/update-display.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/update-display.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "favicon.ico",
+      "output": {
+        "resource": {
+          "relative_path": "favicon.ico"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/PulsePalWiki-BurstParams.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/PulsePalWiki-BurstParams.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/PulsePalWiki-CustomPulseTrain.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/PulsePalWiki-CustomPulseTrain.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/PulsePalWiki-PulseParams.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/PulsePalWiki-PulseParams.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/PulsePalWiki-TrainParams.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/PulsePalWiki-TrainParams.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/pulse-onset-collection.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/pulse-onset-collection.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "logo.svg",
+      "output": {
+        "resource": {
+          "relative_path": "logo.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/concat-pulse-onset.bonsai",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/concat-pulse-onset.bonsai"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/concat-pulse-onset.svg",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/concat-pulse-onset.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/configure-pulsepal.bonsai",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/configure-pulsepal.bonsai"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/configure-pulsepal.svg",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/configure-pulsepal.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/create-custom-pulsetrain.bonsai",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/create-custom-pulsetrain.bonsai"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/create-custom-pulsetrain.svg",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/create-custom-pulsetrain.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/create-pulsepal.bonsai",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/create-pulsepal.bonsai"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/create-pulsepal.svg",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/create-pulsepal.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/send-custom-waveform.bonsai",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/send-custom-waveform.bonsai"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/send-custom-waveform.svg",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/send-custom-waveform.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/set-fixed-voltage.bonsai",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/set-fixed-voltage.bonsai"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/set-fixed-voltage.svg",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/set-fixed-voltage.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/trigger-output.bonsai",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/trigger-output.bonsai"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/trigger-output.svg",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/trigger-output.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/update-display.bonsai",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/update-display.bonsai"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/update-display.svg",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/update-display.svg"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

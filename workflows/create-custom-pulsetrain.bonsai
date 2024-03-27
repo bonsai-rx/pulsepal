@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WorkflowBuilder Version="2.8.1"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xmlns:wie="clr-namespace:Bonsai.Windows.Input;assembly=Bonsai.Windows.Input"
+                 xmlns:pal="clr-namespace:Bonsai.PulsePal;assembly=Bonsai.PulsePal"
+                 xmlns="https://bonsai-rx.org/2018/workflow">
+  <Workflow>
+    <Nodes>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="wie:KeyDown">
+          <wie:Filter>B</wie:Filter>
+          <wie:SuppressRepetitions>false</wie:SuppressRepetitions>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="pal:ConfigureChannelParameter">
+          <pal:DeviceName>PulsePal</pal:DeviceName>
+          <pal:Parameter xsi:type="pal:Phase1DurationConfiguration">
+            <pal:Channel>1</pal:Channel>
+            <pal:Phase1Duration>0.0001</pal:Phase1Duration>
+          </pal:Parameter>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="pal:CustomPulseTrain">
+          <pal:PulseTrain>
+            <pal:PulseOnset Time="1" Voltage="1" />
+            <pal:PulseOnset Time="2" Voltage="3" />
+            <pal:PulseOnset Time="3" Voltage="3" />
+            <pal:PulseOnset Time="4" Voltage="-1" />
+          </pal:PulseTrain>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="pal:SendCustomPulseTrain">
+          <pal:DeviceName>PulsePal</pal:DeviceName>
+          <pal:CustomTrainIdentity>CustomTrain2</pal:CustomTrainIdentity>
+        </Combinator>
+      </Expression>
+    </Nodes>
+    <Edges>
+      <Edge From="0" To="1" Label="Source1" />
+      <Edge From="1" To="2" Label="Source1" />
+      <Edge From="2" To="3" Label="Source1" />
+    </Edges>
+  </Workflow>
+</WorkflowBuilder>

@@ -1,0 +1,873 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class OutputChannelConfiguration | Bonsai.PulsePal </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class OutputChannelConfiguration | Bonsai.PulsePal ">
+      
+      <meta name="description" content="Represents pulse train configuration parameters for an output channel on a Pulse Pal device.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bonsai-rx/pulsepal/new/main/docs/apidoc/new?filename=Bonsai_PulsePal_OutputChannelConfiguration.md&amp;value=---%0Auid%3A%20Bonsai.PulsePal.OutputChannelConfiguration%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="Bonsai - PulsePal">
+            Bonsai - PulsePal
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Bonsai.PulsePal.OutputChannelConfiguration">
+
+
+
+  <h1 id="Bonsai_PulsePal_OutputChannelConfiguration" data-uid="Bonsai.PulsePal.OutputChannelConfiguration" class="text-break">
+Class OutputChannelConfiguration  <a class="header-action link-secondary" title="View source" href="https://github.com/bonsai-rx/pulsepal/blob/main/src/Bonsai.PulsePal/Configuration/OutputChannelConfiguration.cs/#L10"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Bonsai.html">Bonsai</a>.<a class="xref" href="Bonsai.PulsePal.html">PulsePal</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Bonsai.PulsePal.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Represents pulse train configuration parameters for an output channel on a
+Pulse Pal device.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TypeConverter(typeof(OutputChannelConfiguration.OutputChannelConfigurationConverter))]
+public class OutputChannelConfiguration : OutputChannelParameterConfiguration</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="Bonsai.PulsePal.ChannelParameterConfiguration.html">ChannelParameterConfiguration</a></div>
+      <div><a class="xref" href="Bonsai.PulsePal.OutputChannelParameterConfiguration.html">OutputChannelParameterConfiguration</a></div>
+      <div><span class="xref">OutputChannelConfiguration</span></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="Bonsai.PulsePal.ConfigureOutputChannel.html">ConfigureOutputChannel</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Bonsai.PulsePal.OutputChannelParameterConfiguration.html#Bonsai_PulsePal_OutputChannelParameterConfiguration_Channel">OutputChannelParameterConfiguration.Channel</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Bonsai_PulsePal_OutputChannelConfiguration_Biphasic_" data-uid="Bonsai.PulsePal.OutputChannelConfiguration.Biphasic*"></a>
+
+  <h3 id="Bonsai_PulsePal_OutputChannelConfiguration_Biphasic" data-uid="Bonsai.PulsePal.OutputChannelConfiguration.Biphasic">
+  Biphasic
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bonsai-rx/pulsepal/blob/main/src/Bonsai.PulsePal/Configuration/OutputChannelConfiguration.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets a value specifying whether to use biphasic or
+monophasic pulses.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Biphasic { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Bonsai_PulsePal_OutputChannelConfiguration_BurstDuration_" data-uid="Bonsai.PulsePal.OutputChannelConfiguration.BurstDuration*"></a>
+
+  <h3 id="Bonsai_PulsePal_OutputChannelConfiguration_BurstDuration" data-uid="Bonsai.PulsePal.OutputChannelConfiguration.BurstDuration">
+  BurstDuration
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bonsai-rx/pulsepal/blob/main/src/Bonsai.PulsePal/Configuration/OutputChannelConfiguration.cs/#L114"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the duration of a pulse burst, in the range
+[0, 3600] seconds. If set to zero, bursts are disabled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Range(0, 3600)]
+[Precision(4, 0.0001)]
+public double BurstDuration { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Bonsai_PulsePal_OutputChannelConfiguration_ContinuousLoop_" data-uid="Bonsai.PulsePal.OutputChannelConfiguration.ContinuousLoop*"></a>
+
+  <h3 id="Bonsai_PulsePal_OutputChannelConfiguration_ContinuousLoop" data-uid="Bonsai.PulsePal.OutputChannelConfiguration.ContinuousLoop">
+  ContinuousLoop
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bonsai-rx/pulsepal/blob/main/src/Bonsai.PulsePal/Configuration/OutputChannelConfiguration.cs/#L187"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets a value specifying whether to set the output channel in
+continuous loop mode.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ContinuousLoop { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Bonsai_PulsePal_OutputChannelConfiguration_CustomTrainIdentity_" data-uid="Bonsai.PulsePal.OutputChannelConfiguration.CustomTrainIdentity*"></a>
+
+  <h3 id="Bonsai_PulsePal_OutputChannelConfiguration_CustomTrainIdentity" data-uid="Bonsai.PulsePal.OutputChannelConfiguration.CustomTrainIdentity">
+  CustomTrainIdentity
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bonsai-rx/pulsepal/blob/main/src/Bonsai.PulsePal/Configuration/OutputChannelConfiguration.cs/#L147"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets a value specifying the identity of the custom pulse train
+to use on this output channel.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CustomTrainId CustomTrainIdentity { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bonsai.PulsePal.CustomTrainId.html">CustomTrainId</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Bonsai_PulsePal_OutputChannelConfiguration_CustomTrainLoop_" data-uid="Bonsai.PulsePal.OutputChannelConfiguration.CustomTrainLoop*"></a>
+
+  <h3 id="Bonsai_PulsePal_OutputChannelConfiguration_CustomTrainLoop" data-uid="Bonsai.PulsePal.OutputChannelConfiguration.CustomTrainLoop">
+  CustomTrainLoop
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bonsai-rx/pulsepal/blob/main/src/Bonsai.PulsePal/Configuration/OutputChannelConfiguration.cs/#L163"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets a value specifying whether the output channel
+will loop its custom pulse train.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CustomTrainLoop { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Bonsai_PulsePal_OutputChannelConfiguration_CustomTrainTarget_" data-uid="Bonsai.PulsePal.OutputChannelConfiguration.CustomTrainTarget*"></a>
+
+  <h3 id="Bonsai_PulsePal_OutputChannelConfiguration_CustomTrainTarget" data-uid="Bonsai.PulsePal.OutputChannelConfiguration.CustomTrainTarget">
+  CustomTrainTarget
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bonsai-rx/pulsepal/blob/main/src/Bonsai.PulsePal/Configuration/OutputChannelConfiguration.cs/#L155"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets a value specifying the interpretation of pulse times in the
+custom pulse train.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CustomTrainTarget CustomTrainTarget { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bonsai.PulsePal.CustomTrainTarget.html">CustomTrainTarget</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Bonsai_PulsePal_OutputChannelConfiguration_InterBurstInterval_" data-uid="Bonsai.PulsePal.OutputChannelConfiguration.InterBurstInterval*"></a>
+
+  <h3 id="Bonsai_PulsePal_OutputChannelConfiguration_InterBurstInterval" data-uid="Bonsai.PulsePal.OutputChannelConfiguration.InterBurstInterval">
+  InterBurstInterval
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bonsai-rx/pulsepal/blob/main/src/Bonsai.PulsePal/Configuration/OutputChannelConfiguration.cs/#L125"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the duration of the off-time between bursts, in the range
+[0.0001, 3600] seconds.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Range(0.0001, 3600)]
+[Precision(4, 0.0001)]
+public double InterBurstInterval { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Bonsai_PulsePal_OutputChannelConfiguration_InterPhaseInterval_" data-uid="Bonsai.PulsePal.OutputChannelConfiguration.InterPhaseInterval*"></a>
+
+  <h3 id="Bonsai_PulsePal_OutputChannelConfiguration_InterPhaseInterval" data-uid="Bonsai.PulsePal.OutputChannelConfiguration.InterPhaseInterval">
+  InterPhaseInterval
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bonsai-rx/pulsepal/blob/main/src/Bonsai.PulsePal/Configuration/OutputChannelConfiguration.cs/#L82"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the interval between the first and second phase of a biphasic pulse,
+in the range [0, 3600] seconds.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Range(0, 3600)]
+[Precision(4, 0.0001)]
+public double InterPhaseInterval { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Bonsai_PulsePal_OutputChannelConfiguration_InterPulseInterval_" data-uid="Bonsai.PulsePal.OutputChannelConfiguration.InterPulseInterval*"></a>
+
+  <h3 id="Bonsai_PulsePal_OutputChannelConfiguration_InterPulseInterval" data-uid="Bonsai.PulsePal.OutputChannelConfiguration.InterPulseInterval">
+  InterPulseInterval
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bonsai-rx/pulsepal/blob/main/src/Bonsai.PulsePal/Configuration/OutputChannelConfiguration.cs/#L103"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the interval between pulses, in the range [0.0001, 3600] seconds.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Range(0.0001, 3600)]
+[Precision(4, 0.0001)]
+public double InterPulseInterval { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Bonsai_PulsePal_OutputChannelConfiguration_Phase1Duration_" data-uid="Bonsai.PulsePal.OutputChannelConfiguration.Phase1Duration*"></a>
+
+  <h3 id="Bonsai_PulsePal_OutputChannelConfiguration_Phase1Duration" data-uid="Bonsai.PulsePal.OutputChannelConfiguration.Phase1Duration">
+  Phase1Duration
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bonsai-rx/pulsepal/blob/main/src/Bonsai.PulsePal/Configuration/OutputChannelConfiguration.cs/#L71"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the duration of the first phase of the pulse, in the range
+[0.0001, 3600] seconds.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Range(0.0001, 3600)]
+[Precision(4, 0.0001)]
+public double Phase1Duration { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Bonsai_PulsePal_OutputChannelConfiguration_Phase1Voltage_" data-uid="Bonsai.PulsePal.OutputChannelConfiguration.Phase1Voltage*"></a>
+
+  <h3 id="Bonsai_PulsePal_OutputChannelConfiguration_Phase1Voltage" data-uid="Bonsai.PulsePal.OutputChannelConfiguration.Phase1Voltage">
+  Phase1Voltage
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bonsai-rx/pulsepal/blob/main/src/Bonsai.PulsePal/Configuration/OutputChannelConfiguration.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the voltage for the first phase of each pulse.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Range(-10, 10)]
+[Precision(3, 0.001)]
+public double Phase1Voltage { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Bonsai_PulsePal_OutputChannelConfiguration_Phase2Duration_" data-uid="Bonsai.PulsePal.OutputChannelConfiguration.Phase2Duration*"></a>
+
+  <h3 id="Bonsai_PulsePal_OutputChannelConfiguration_Phase2Duration" data-uid="Bonsai.PulsePal.OutputChannelConfiguration.Phase2Duration">
+  Phase2Duration
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bonsai-rx/pulsepal/blob/main/src/Bonsai.PulsePal/Configuration/OutputChannelConfiguration.cs/#L93"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the duration of the second phase of the pulse, in the range
+[0.0001, 3600] seconds.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Range(0.0001, 3600)]
+[Precision(4, 0.0001)]
+public double Phase2Duration { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Bonsai_PulsePal_OutputChannelConfiguration_Phase2Voltage_" data-uid="Bonsai.PulsePal.OutputChannelConfiguration.Phase2Voltage*"></a>
+
+  <h3 id="Bonsai_PulsePal_OutputChannelConfiguration_Phase2Voltage" data-uid="Bonsai.PulsePal.OutputChannelConfiguration.Phase2Voltage">
+  Phase2Voltage
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bonsai-rx/pulsepal/blob/main/src/Bonsai.PulsePal/Configuration/OutputChannelConfiguration.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the voltage for the second phase of each pulse.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Range(-10, 10)]
+[Precision(3, 0.001)]
+public double Phase2Voltage { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Bonsai_PulsePal_OutputChannelConfiguration_PulseTrainDelay_" data-uid="Bonsai.PulsePal.OutputChannelConfiguration.PulseTrainDelay*"></a>
+
+  <h3 id="Bonsai_PulsePal_OutputChannelConfiguration_PulseTrainDelay" data-uid="Bonsai.PulsePal.OutputChannelConfiguration.PulseTrainDelay">
+  PulseTrainDelay
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bonsai-rx/pulsepal/blob/main/src/Bonsai.PulsePal/Configuration/OutputChannelConfiguration.cs/#L60"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the delay to start the pulse train, in the range
+[0.0001, 3600] seconds.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Range(0.0001, 3600)]
+[Precision(4, 0.0001)]
+public double PulseTrainDelay { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Bonsai_PulsePal_OutputChannelConfiguration_PulseTrainDuration_" data-uid="Bonsai.PulsePal.OutputChannelConfiguration.PulseTrainDuration*"></a>
+
+  <h3 id="Bonsai_PulsePal_OutputChannelConfiguration_PulseTrainDuration" data-uid="Bonsai.PulsePal.OutputChannelConfiguration.PulseTrainDuration">
+  PulseTrainDuration
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bonsai-rx/pulsepal/blob/main/src/Bonsai.PulsePal/Configuration/OutputChannelConfiguration.cs/#L136"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the duration of the pulse train, in the range
+[0.0001, 3600] seconds.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Range(0.0001, 3600)]
+[Precision(4, 0.0001)]
+public double PulseTrainDuration { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Bonsai_PulsePal_OutputChannelConfiguration_RestingVoltage_" data-uid="Bonsai.PulsePal.OutputChannelConfiguration.RestingVoltage*"></a>
+
+  <h3 id="Bonsai_PulsePal_OutputChannelConfiguration_RestingVoltage" data-uid="Bonsai.PulsePal.OutputChannelConfiguration.RestingVoltage">
+  RestingVoltage
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bonsai-rx/pulsepal/blob/main/src/Bonsai.PulsePal/Configuration/OutputChannelConfiguration.cs/#L49"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the resting voltage, in the range [-10, 10] volts.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Range(-10, 10)]
+[Precision(3, 0.001)]
+public double RestingVoltage { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Bonsai_PulsePal_OutputChannelConfiguration_TriggerOnChannel1_" data-uid="Bonsai.PulsePal.OutputChannelConfiguration.TriggerOnChannel1*"></a>
+
+  <h3 id="Bonsai_PulsePal_OutputChannelConfiguration_TriggerOnChannel1" data-uid="Bonsai.PulsePal.OutputChannelConfiguration.TriggerOnChannel1">
+  TriggerOnChannel1
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bonsai-rx/pulsepal/blob/main/src/Bonsai.PulsePal/Configuration/OutputChannelConfiguration.cs/#L171"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets a value specifying whether trigger channel 1 can trigger
+this output channel.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TriggerOnChannel1 { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Bonsai_PulsePal_OutputChannelConfiguration_TriggerOnChannel2_" data-uid="Bonsai.PulsePal.OutputChannelConfiguration.TriggerOnChannel2*"></a>
+
+  <h3 id="Bonsai_PulsePal_OutputChannelConfiguration_TriggerOnChannel2" data-uid="Bonsai.PulsePal.OutputChannelConfiguration.TriggerOnChannel2">
+  TriggerOnChannel2
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bonsai-rx/pulsepal/blob/main/src/Bonsai.PulsePal/Configuration/OutputChannelConfiguration.cs/#L179"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets a value specifying whether trigger channel 2 can trigger
+this output channel.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TriggerOnChannel2 { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Bonsai_PulsePal_OutputChannelConfiguration_Configure_" data-uid="Bonsai.PulsePal.OutputChannelConfiguration.Configure*"></a>
+
+  <h3 id="Bonsai_PulsePal_OutputChannelConfiguration_Configure_Bonsai_PulsePal_PulsePalDevice_" data-uid="Bonsai.PulsePal.OutputChannelConfiguration.Configure(Bonsai.PulsePal.PulsePalDevice)">
+  Configure(PulsePalDevice)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bonsai-rx/pulsepal/blob/main/src/Bonsai.PulsePal/Configuration/OutputChannelConfiguration.cs/#L192"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Applies the channel parameter configuration to the specified
+Pulse Pal device.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Configure(PulsePalDevice pulsePal)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pulsePal</code> <a class="xref" href="Bonsai.PulsePal.PulsePalDevice.html">PulsePalDevice</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bonsai_PulsePal_OutputChannelConfiguration_ToString_" data-uid="Bonsai.PulsePal.OutputChannelConfiguration.ToString*"></a>
+
+  <h3 id="Bonsai_PulsePal_OutputChannelConfiguration_ToString" data-uid="Bonsai.PulsePal.OutputChannelConfiguration.ToString">
+  ToString()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bonsai-rx/pulsepal/blob/main/src/Bonsai.PulsePal/Configuration/OutputChannelConfiguration.cs/#L216"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a string that represents the current object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>A string that represents the current object.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bonsai-rx/pulsepal/blob/main/src/Bonsai.PulsePal/Configuration/OutputChannelConfiguration.cs/#L10" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          &copy; 2024 Bonsai Foundation CIC and Contributors. Made with <a href="https://dotnet.github.io/docfx">docfx</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
