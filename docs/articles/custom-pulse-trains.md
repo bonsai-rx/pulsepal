@@ -16,7 +16,7 @@ Custom pulse trains can be constructed using the [`CustomPulseTrain`](xref:Bonsa
 
 In the [`CustomPulseTrain`](xref:Bonsai.PulsePal.CustomPulseTrain) operator, the array of doubles specifying the pulse onset times and voltages can be set using the `PulseOnsetCollection` editor. The screenshot below reproduces the example custom pulse train in the image at the beginning of this section.
 
-!['Bonsai - PulseOnsetCollection'](~/images/pulse-onset-collection.png)
+!['Bonsai - PulseOnsetCollection'](~/images/pulse-onset-collection.png){width=500px}
 
 > [!NOTE]
 > Pulse onset times and voltages are absolute values (they do not stack).
