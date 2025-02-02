@@ -20,32 +20,29 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: true
+          submodules: recursive
 
-      - name: Setup MSBuild
-        uses: microsoft/setup-msbuild@v2
-
-      - name: Restore NuGet Packages
-        run: msbuild -t:restore src/Bonsai.PulsePal.sln
-
-      - name: Build Solution
-        run: msbuild src/Bonsai.PulsePal.sln /p:Configuration=Release
-
-      - name: Setup .NET Core SDK
+      - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: 7.x
+          dotnet-version: 8.x
 
       - name: Setup DocFX
         run: dotnet tool restore
 
       - name: Setup Bonsai
         working-directory: .bonsai
-        run: .\Setup.ps1
+        run: ./Setup.ps1
+        
+      - name: Restore
+        run: dotnet restore
 
+      - name: Build
+        run: dotnet build --no-restore
+        
       - name: Build Documentation
         working-directory: docs
-        run: .\build.ps1
+        run: ./build.ps1
 
       - name: Upload GitHub Pages Artifact
         uses: actions/upload-pages-artifact@v3

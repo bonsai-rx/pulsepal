@@ -1,10 +1,3 @@
 .vs
-bin
-obj
+/artifacts/
 *.user
-*.exe
-*.exe.old
-*.exe.settings
-
-# bonsai environment
-Packages

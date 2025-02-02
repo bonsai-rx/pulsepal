@@ -10,7 +10,9 @@
         }
       ],
       "dest": "api",
-      "filter": "filter.yml"
+      "filter": "filter.yml",
+      "enumSortOrder": "declaringOrder",
+      "memberLayout": "separatePages"
     }
   ],
   "build": {
@@ -29,8 +31,6 @@
     "resource": [
       {
         "files": [
-          "logo.svg",
-          "favicon.ico",
           "images/**",
           "workflows/**"
         ]
@@ -57,10 +57,9 @@
     "globalMetadata": {
       "_appName": "Bonsai - PulsePal",
       "_appTitle": "Bonsai.PulsePal",
+      "_appFooter": "&copy; 2024 Bonsai Foundation CIC and Contributors. Made with <a href=\"https://dotnet.github.io/docfx\">docfx</a>",
       "_enableNewTab": true,
       "_enableSearch": true,
-      "pdf": false,
-      "_appFooter": "&copy; 2024 Bonsai Foundation CIC and Contributors. Made with <a href=\"https://dotnet.github.io/docfx\">docfx</a>",
       "_gitContribute": {
         "repo": "https://github.com/bonsai-rx/pulsepal",
         "branch": "main",
